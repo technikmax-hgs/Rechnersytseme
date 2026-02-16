@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+while true 
+	do
+	temp=`cat /sys/bus/w1/devices/28-00000a553a90/w1_slave |sed '1d' |sed 's/.*t=\([0-9]*\)\([0-9]\{3\}\)/\1.\2/'`
+	echo $temp
+	rrdupdate /home/gruppe2/temperatur1.rrd N:$temp
+	sleep 5
+done
+

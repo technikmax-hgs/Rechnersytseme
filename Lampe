@@ -1,0 +1,32 @@
+#!/bin/bash 
+
+rot=16
+gelb=20
+gruen=21
+
+zeit=0.1
+
+pinctrl set $rot op
+pinctrl set $gruen op
+pinctrl set $gelb op
+
+ 
+while true; do
+	pinctrl set $rot dh
+	sleep $zeit
+	pinctrl set $gelb dh
+	sleep $zeit
+
+	pinctrl set $gelb,$rot dl
+	pinctrl set $gruen dh
+	sleep $zeit
+
+	pinctrl set $gruen dl
+	pinctrl set $gelb dh
+	sleep $zeit
+
+	pinctrl set $gelb dl
+
+
+done  
+

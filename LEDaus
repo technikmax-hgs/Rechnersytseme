@@ -1,0 +1,2 @@
+#!/bin/bash 
+pinctrl set 16,21,20 dl 

@@ -1,0 +1,3 @@
+#!/bin/bash
+pinctrl set 16,20,21 op
+pinctrl set 16,20,21 dh
